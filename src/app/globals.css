@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-baloo), ui-rounded, system-ui, sans-serif;
+  --font-sans: "Baloo 2 Variable", ui-rounded, system-ui, sans-serif;
   --color-rare: #3b82f6;
   --color-epic: #a855f7;
   --color-legendary: #facc15;

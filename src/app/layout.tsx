@@ -1,11 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Baloo_2 } from "next/font/google";
+import "@fontsource-variable/baloo-2";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
 import { ServiceWorker } from "@/components/ServiceWorker";
 import "./globals.css";
-
-const baloo = Baloo_2({ subsets: ["latin"], variable: "--font-baloo" });
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("app");
@@ -22,7 +20,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const locale = await getLocale();
   return (
     <html lang={locale}>
-      <body className={`${baloo.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
         <ServiceWorker />
       </body>
