@@ -1,0 +1,16 @@
+{
+  "app": {
+    "name": "Bonbox",
+    "tagline": "School reward points, treasure chest edition.",
+    "description": "Reward your kids' efforts with boxes to open, an avatar to dress up and an album to complete. Free and open source."
+  },
+  "home": {
+    "parentCta": "I'm a parent",
+    "childCta": "I'm a kid",
+    "rarities": "Three boxes, three rarities",
+    "rare": "Rare",
+    "epic": "Epic",
+    "legendary": "Legendary",
+    "openSource": "Free, ad-free, open source."
+  }
+}

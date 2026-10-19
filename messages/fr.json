@@ -1,0 +1,16 @@
+{
+  "app": {
+    "name": "Bonbox",
+    "tagline": "Les bons points de l'école, version coffre au trésor.",
+    "description": "Récompense les efforts de tes enfants avec des boîtes à ouvrir, un avatar à équiper et un album à compléter. Gratuit et open source."
+  },
+  "home": {
+    "parentCta": "Je suis parent",
+    "childCta": "Je suis un enfant",
+    "rarities": "Trois boîtes, trois raretés",
+    "rare": "Rare",
+    "epic": "Épique",
+    "legendary": "Légendaire",
+    "openSource": "Gratuit, sans publicité, open source."
+  }
+}
