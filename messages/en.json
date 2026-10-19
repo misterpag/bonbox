@@ -12,5 +12,64 @@
     "epic": "Epic",
     "legendary": "Legendary",
     "openSource": "Free, ad-free, open source."
+  },
+  "common": {
+    "back": "Back",
+    "signOut": "Sign out",
+    "password": "Password",
+    "loading": "One moment…",
+    "genericError": "Oops, something went wrong. Please try again."
+  },
+  "passkey": {
+    "add": "Turn on fingerprint / Face ID",
+    "added": "Done! Next time, your finger or face is all you need.",
+    "signIn": "Sign in with my fingerprint",
+    "notSupported": "This device doesn't support biometric sign-in.",
+    "count": "{count, plural, =0 {No biometric device registered} one {# biometric device registered} other {# biometric devices registered}}"
+  },
+  "parentAuth": {
+    "title": "Parent area",
+    "signUpTab": "Create an account",
+    "signInTab": "Sign in",
+    "name": "Your first name",
+    "email": "Email",
+    "signUp": "Create my account",
+    "signIn": "Sign in",
+    "passwordHint": "At least 8 characters"
+  },
+  "parent": {
+    "hello": "Hello {name}!",
+    "family": "Your family: {name}",
+    "familyDefaultName": "{name}'s family",
+    "children": "Your kids",
+    "noChildren": "No kids yet. Create their account below.",
+    "points": "{count, plural, =0 {0 point} one {# point} other {# points}}",
+    "loginAs": "Username: {username}",
+    "addChild": "Add a kid",
+    "childName": "Their first name or nickname",
+    "childUsername": "Their username",
+    "childUsernameHint": "3 to 30 characters: letters, numbers, dot or underscore",
+    "childPassword": "Their password",
+    "createChild": "Create account",
+    "childCreated": "Account created! {name} can sign in with the username \"{username}\".",
+    "usernameTaken": "This username is taken, try another one.",
+    "usernameInvalid": "Invalid username: 3 to 30 characters, letters, numbers, dot or underscore.",
+    "passwordTooShort": "The password must be at least 8 characters.",
+    "nameRequired": "Enter a first name or nickname.",
+    "security": "Security"
+  },
+  "childAuth": {
+    "title": "Hi there!",
+    "subtitle": "Sign in to open your boxes.",
+    "username": "Your username",
+    "signIn": "Let's go!",
+    "or": "or"
+  },
+  "child": {
+    "hello": "Hi {name}!",
+    "wallet": "Your points",
+    "points": "{count, plural, =0 {0 point} one {# point} other {# points}}",
+    "boxesSoon": "Your boxes are coming soon…",
+    "security": "Quick sign-in"
   }
 }

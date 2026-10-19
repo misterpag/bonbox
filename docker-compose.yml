@@ -1,0 +1,46 @@
+# Environnement local Bonbox : Postgres + pgAdmin
+#   docker compose up -d     → démarre la base (localhost:5432) et pgAdmin (http://localhost:5050)
+#   docker compose down      → arrête tout (les données sont conservées dans le volume)
+#   docker compose down -v   → arrête tout ET efface la base
+name: bonbox
+
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: bonbox
+      POSTGRES_PASSWORD: bonbox
+      POSTGRES_DB: bonbox
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bonbox -d bonbox"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  pgadmin:
+    image: dpage/pgadmin4:9
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@bonbox.dev
+      PGADMIN_DEFAULT_PASSWORD: bonbox
+      # Mode bureau : pas d'écran de connexion à pgAdmin en local
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
+    ports:
+      - "5050:80"
+    volumes:
+      - ./docker/pgadmin/servers.json:/pgadmin4/servers.json:ro
+      - ./docker/pgadmin/pgpass:/pgpass:ro
+      - pgadmin:/var/lib/pgadmin
+
+volumes:
+  pgdata:
+  pgadmin:

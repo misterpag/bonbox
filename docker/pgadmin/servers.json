@@ -1,0 +1,14 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "Bonbox (local)",
+      "Group": "Bonbox",
+      "Host": "db",
+      "Port": 5432,
+      "MaintenanceDB": "bonbox",
+      "Username": "bonbox",
+      "PassFile": "/pgpass",
+      "SSLMode": "prefer"
+    }
+  }
+}

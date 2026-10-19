@@ -12,5 +12,64 @@
     "epic": "Épique",
     "legendary": "Légendaire",
     "openSource": "Gratuit, sans publicité, open source."
+  },
+  "common": {
+    "back": "Retour",
+    "signOut": "Se déconnecter",
+    "password": "Mot de passe",
+    "loading": "Un instant…",
+    "genericError": "Oups, quelque chose s'est mal passé. Réessaie."
+  },
+  "passkey": {
+    "add": "Activer l'empreinte / Face ID",
+    "added": "C'est activé ! La prochaine fois, ton doigt ou ton visage suffira.",
+    "signIn": "Me connecter avec mon empreinte",
+    "notSupported": "Cet appareil ne permet pas la connexion biométrique.",
+    "count": "{count, plural, =0 {Aucun appareil biométrique enregistré} one {# appareil biométrique enregistré} other {# appareils biométriques enregistrés}}"
+  },
+  "parentAuth": {
+    "title": "Espace parent",
+    "signUpTab": "Créer un compte",
+    "signInTab": "Se connecter",
+    "name": "Ton prénom",
+    "email": "Email",
+    "signUp": "Créer mon compte",
+    "signIn": "Me connecter",
+    "passwordHint": "8 caractères minimum"
+  },
+  "parent": {
+    "hello": "Bonjour {name} !",
+    "family": "Ta famille : {name}",
+    "familyDefaultName": "Famille de {name}",
+    "children": "Tes enfants",
+    "noChildren": "Aucun enfant pour l'instant. Crée son compte ci-dessous.",
+    "points": "{count, plural, =0 {0 bon point} one {# bon point} other {# bons points}}",
+    "loginAs": "Identifiant : {username}",
+    "addChild": "Ajouter un enfant",
+    "childName": "Son prénom ou surnom",
+    "childUsername": "Son identifiant de connexion",
+    "childUsernameHint": "3 à 30 caractères : lettres, chiffres, point ou tiret bas",
+    "childPassword": "Son mot de passe",
+    "createChild": "Créer le compte",
+    "childCreated": "Compte créé ! {name} peut se connecter avec l'identifiant « {username} ».",
+    "usernameTaken": "Cet identifiant est déjà pris, essaie une variante.",
+    "usernameInvalid": "Identifiant invalide : 3 à 30 caractères, lettres, chiffres, point ou tiret bas.",
+    "passwordTooShort": "Le mot de passe doit faire au moins 8 caractères.",
+    "nameRequired": "Indique un prénom ou un surnom.",
+    "security": "Sécurité"
+  },
+  "childAuth": {
+    "title": "Coucou !",
+    "subtitle": "Connecte-toi pour ouvrir tes boîtes.",
+    "username": "Ton identifiant",
+    "signIn": "C'est parti !",
+    "or": "ou"
+  },
+  "child": {
+    "hello": "Salut {name} !",
+    "wallet": "Ta cagnotte",
+    "points": "{count, plural, =0 {0 bon point} one {# bon point} other {# bons points}}",
+    "boxesSoon": "Tes boîtes arrivent bientôt…",
+    "security": "Connexion rapide"
   }
 }

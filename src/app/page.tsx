@@ -1,8 +1,13 @@
+import Link from "next/link";
+import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
+import { getSession, roleOf } from "@/lib/session";
 import { GiftBox } from "@/components/GiftBox";
 import { RARITIES } from "@/lib/economy";
 
 export default async function Home() {
+  const session = await getSession();
+  if (session) redirect(roleOf(session) === "child" ? "/enfant" : "/parent");
   const t = await getTranslations();
   return (
     <main className="mx-auto flex min-h-dvh max-w-3xl flex-col items-center justify-center gap-10 px-4 py-12 text-center">
@@ -26,12 +31,12 @@ export default async function Home() {
       </section>
 
       <div className="flex w-full max-w-sm flex-col gap-3 sm:flex-row">
-        <a href="/parent" className="flex-1 rounded-2xl bg-legendary px-6 py-4 text-lg font-bold text-night shadow-lg">
+        <Link href="/parent" className="flex-1 rounded-2xl bg-legendary px-6 py-4 text-lg font-bold text-night shadow-lg">
           {t("home.parentCta")}
-        </a>
-        <a href="/enfant" className="flex-1 rounded-2xl bg-epic px-6 py-4 text-lg font-bold shadow-lg">
+        </Link>
+        <Link href="/enfant" className="flex-1 rounded-2xl bg-epic px-6 py-4 text-lg font-bold shadow-lg">
           {t("home.childCta")}
-        </a>
+        </Link>
       </div>
 
       <p className="text-sm text-violet-300">{t("home.openSource")}</p>

@@ -19,26 +19,39 @@ Un coupon réel (livre, sortie, bonbons…) offert par un parent arrive toujours
 ## Stack
 
 - [Next.js](https://nextjs.org) (App Router, TypeScript) + Tailwind CSS
-- [Neon](https://neon.tech) (Postgres serverless) + [Drizzle ORM](https://orm.drizzle.team)
+- Postgres : Docker en local, [Neon](https://neon.tech) en production, via [Drizzle ORM](https://orm.drizzle.team)
 - [Better Auth](https://www.better-auth.com) : email ou identifiant + mot de passe, déverrouillage biométrique par passkey
 - [next-intl](https://next-intl.dev) : français et anglais
 - Déploiement sur [Railway](https://railway.com)
 
-## Démarrer en local
+## Démarrer en local (Windows, macOS, Linux)
+
+Prérequis : [Node.js 22+](https://nodejs.org) et [Docker Desktop](https://www.docker.com/products/docker-desktop/) lancé.
 
 ```bash
 npm install
-cp .env.example .env.local   # puis renseignez DATABASE_URL et BETTER_AUTH_SECRET
-npm run db:migrate           # crée les tables dans Neon
+cp .env.example .env.local   # sous Windows PowerShell : copy .env.example .env.local
+npm run setup                # démarre Postgres + pgAdmin dans Docker et crée les tables
 npm run dev                  # http://localhost:3000
 ```
+
+### Base de données locale
+
+| Service | Adresse | Identifiants |
+| --- | --- | --- |
+| Postgres | `localhost:5432`, base `bonbox` | `bonbox` / `bonbox` |
+| pgAdmin | http://localhost:5050 | aucun (mode bureau) ; serveur « Bonbox (local) » déjà configuré |
+
+Pour vous connecter depuis un pgAdmin installé sur votre poste (hors Docker) : hôte `localhost`, port `5432`, base `bonbox`, utilisateur `bonbox`, mot de passe `bonbox`.
 
 ## Scripts
 
 | Commande | Rôle |
 | --- | --- |
+| `npm run setup` | Démarre la base Docker et applique les migrations |
 | `npm run dev` | Serveur de développement |
 | `npm run build` / `npm start` | Build et serveur de production |
+| `npm run db:up` / `npm run db:down` | Démarre / arrête Postgres et pgAdmin |
 | `npm run db:generate` | Génère une migration après modification de `src/db/schema.ts` |
 | `npm run db:migrate` | Applique les migrations sur la base |
 | `npm run db:studio` | Explorateur de base Drizzle Studio |

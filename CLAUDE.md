@@ -21,6 +21,7 @@ Document de cadrage produit : https://claude.ai/code/artifact/03db5005-1452-4728
 - Le solde des points est la somme de `point_ledger` ; on n'écrit jamais de solde.
 - Toute action d'un enfant envers un autre enfant passe par une validation parentale.
 - Textes de l'interface dans `messages/fr.json` et `messages/en.json` (next-intl), jamais en dur dans les composants.
-- Base : Drizzle + Neon. Après une modification de `src/db/schema.ts` : `npm run db:generate` puis `npm run db:migrate`.
-- Auth : Better Auth (`src/lib/auth.ts`), plugins username et passkey. Les enfants n'ont pas d'email réel.
+- Base : Drizzle + node-postgres. En local, Postgres et pgAdmin dans Docker (`docker-compose.yml`, `npm run setup`) ; en production, Neon. Après une modification de `src/db/schema.ts` : `npm run db:generate` puis `npm run db:migrate`.
+- Auth : Better Auth (`src/lib/auth.ts`), plugins username et passkey. Les enfants n'ont pas d'email réel : leur compte est créé par un parent via `createChild` (`src/lib/family.ts`), sans ouvrir de session dans le navigateur du parent.
+- Les passkeys portent le prénom de l'utilisateur (pas de nom d'appareil) : c'est ce qui s'affiche dans le sélecteur d'une tablette familiale partagée.
 - Langue du code : identifiants en anglais, commentaires et textes produit en français.
