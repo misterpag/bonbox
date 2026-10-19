@@ -13,7 +13,8 @@
     "typecheck": "tsc --noEmit",
     "db:up": "docker compose up -d",
     "db:down": "docker compose down",
-    "setup": "docker compose up -d && drizzle-kit migrate"
+    "setup": "docker compose up -d --wait && drizzle-kit migrate",
+    "local": "npm run setup && next dev"
   },
   "dependencies": {
     "@better-auth/passkey": "^1.7.11",

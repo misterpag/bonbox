@@ -14,6 +14,11 @@ Document de cadrage produit : https://claude.ai/code/artifact/03db5005-1452-4728
 - Amis par code ami, validés par un parent de chaque enfant. Échanges un contre un, même rareté, validés par les deux parents.
 - Classement : score = somme des objets possédés (rare 10, épique 30, légendaire 80). Masquable par parent / groupe.
 
+## Lancer le projet
+
+- `npm install` puis `npm run local` : démarre Postgres et pgAdmin (Docker Desktop doit être ouvert), applique les migrations et lance `next dev` sur http://localhost:3000.
+- pgAdmin : http://localhost:5050, serveur « Bonbox (local) » préconfiguré.
+
 ## Règles techniques
 
 - Règles d'économie centralisées dans `src/lib/economy.ts` : ne jamais coder un prix ou une valeur en dur ailleurs.

@@ -30,10 +30,11 @@ Prérequis : [Node.js 22+](https://nodejs.org) et [Docker Desktop](https://www.d
 
 ```bash
 npm install
-cp .env.example .env.local   # sous Windows PowerShell : copy .env.example .env.local
-npm run setup                # démarre Postgres + pgAdmin dans Docker et crée les tables
-npm run dev                  # http://localhost:3000
+npm run local    # démarre Postgres + pgAdmin (Docker), crée les tables, lance l'app sur http://localhost:3000
 ```
+
+Sans fichier `.env.local`, l'app utilise les valeurs locales par défaut (base Docker, `http://localhost:3000`).
+Pour les personnaliser : copiez `.env.example` en `.env.local`.
 
 ### Base de données locale
 
@@ -48,6 +49,7 @@ Pour vous connecter depuis un pgAdmin installé sur votre poste (hors Docker) : 
 
 | Commande | Rôle |
 | --- | --- |
+| `npm run local` | Tout en un : base Docker, migrations, serveur de développement |
 | `npm run setup` | Démarre la base Docker et applique les migrations |
 | `npm run dev` | Serveur de développement |
 | `npm run build` / `npm start` | Build et serveur de production |
